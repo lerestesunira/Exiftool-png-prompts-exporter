@@ -3,7 +3,7 @@ import subprocess
 import re
 import json
 
-EXIFTOOL_PATH = r"D:\ZtempIA\ZDOCS\exiftool-13.42_64\exiftool.exe"  # Chemin vers exiftool.exe
+EXIFTOOL_PATH = r"C:\My way\my path to\exiftool.exe"  # Chemin vers exiftool.exe
 
 def clean_json_string(json_str):
     json_str = re.sub(r',\s*\.', ',', json_str)
@@ -61,5 +61,6 @@ all_prompts = extract_prompts_from_root(folder)
 with open(output_txt, "w", encoding="utf-8") as fp:
     for prompt in all_prompts:
         fp.write(prompt + "\n")
+
 
 print(f"Export terminé : {len(all_prompts)} prompts positifs trouvés dans {output_txt} (dossier : {folder})")
